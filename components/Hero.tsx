@@ -15,7 +15,7 @@ export const Hero = () => {
         <h3 className="font-caption text-2xl">Full-Stack developer</h3>
         <p>
           {/* Use Code Component */}
-          Passionné par l&apos;informatique et en pleine formation en développement d&apos;applications et web, je maîtrise les bases de la programmation et aime relever des défis techniques. Curieux et motivé, j&apos;apprends rapidement et cherche à développer des solutions innovantes. Mon objectif ? Allier créativité et performance pour concevoir des applications efficaces et ergonomiques.
+          Passionné par l&apos;informatique et en pleine formation en <Code>développement</Code> d&apos;applications et web, je maîtrise les bases de la programmation et aime relever des défis techniques. Curieux et motivé, j&apos;apprends rapidement et cherche à développer des solutions innovantes. Mon objectif ? Allier créativité et performance pour concevoir des applications efficaces et ergonomiques.
         </p>
       </div>
       <div className="flex-1 max-md:m-auto ml-auto">
