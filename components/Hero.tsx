@@ -4,7 +4,7 @@ import { ComponentPropsWithoutRef } from "react";
 import { Section } from "./Section";
 
 const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
-  return <span className={cn("bg-accent/50 hover:bg-accent/100 font-mono transition-colors border border-accent p-1 rounded-sm text-primary", className)} {...props} />;
+  return <span className={cn("bg-accent/40 hover:bg-accent/80 font-mono transition-colors border border-accent p-1 rounded-sm text-primary", className)} {...props} />;
 };
 
 export const Hero = () => {

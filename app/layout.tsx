@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className={cn(geistSans.variable, sairaStencilOne.variable, geistMono.variable, "antialiased font-sans h-full bg-background text-foreground")}>{children}</body>
+      <body className={cn(geistSans.variable, sairaStencilOne.variable, geistMono.variable, "antialiased font-sans h-full bg-background text-foreground transition-colors duration-500")}>{children}</body>
     </html>
   );
 }
