@@ -28,9 +28,9 @@ export const Status = () => {
         </Card>
         <Card className="p-4 flex-1 flex flex-col gap-2">
           <p className="text-lg text-muted-foreground">Contact Me</p>
-          <ContactCard img="github-pp.jpeg" mdImg="github-logo.jpeg" name="@Shasor" description="Discover my projects!" />
-          <ContactCard img="adam-picture.jpeg" mdImg="linkedin-logo.png" name="@goncalves-adam" description="More about my professional life" />
-          <ContactCard img="gmail-profile-picture.jpg" mdImg="gmail-logo.png" name="@shasor" description="E-mail me!" />
+          {CONTACT_CARDS.map((contact, index) => (
+            <ContactCard key={index} {...contact} />
+          ))}
         </Card>
       </div>
     </Section>
@@ -118,27 +118,54 @@ const Works = (props: WorksProps) => {
   );
 };
 
+const CONTACT_CARDS: ContactCardProps[] = [
+  {
+    img: "github-pp.jpeg",
+    mdImg: "github-logo.jpeg",
+    name: "@Shasor",
+    description: "Discover my projects!",
+    url: "https://github.com/Shasor",
+  },
+  {
+    img: "adam-picture.jpeg",
+    mdImg: "linkedin-logo.png",
+    name: "@goncalves-adam",
+    description: "More about my professional life",
+    url: "https://www.linkedin.com/in/goncalves-adam/",
+  },
+  {
+    img: "gmail-profile-picture.jpg",
+    mdImg: "gmail-logo.png",
+    name: "@shasor",
+    description: "E-mail me!",
+    url: "mailto:goncalvesadam@icloud.com?subject=Mail from your Portfolio",
+  },
+];
+
 type ContactCardProps = {
   img: string;
   mdImg: string;
   name: string;
   description: string;
+  url: string;
 };
 
 const ContactCard = (props: ContactCardProps) => {
   return (
-    <Card className="p-3 hover:bg-accent/80 transition-colors group flex flex-row items-center gap-4">
-      <div className="relative">
-        <img src={props.img} alt={props.name} className="w-10 h-10 rounded-full object-contain" />
-        <img src={props.mdImg} alt={props.name} className="w-4 h-4 absolute -bottom-1 -right-1 rounded-full object-contain" />
-      </div>
-      <div className="mr-auto">
-        <p className="text-lg font-semibold">{props.name}</p>
-        <p title={props.description} className="text-xs text-muted-foreground truncate">
-          {props.description}
-        </p>
-      </div>
-      <ArrowUpRight size={16} className="group-hover:translate-x-2 mr-4 group-hover:-translate-y-2 transition-transform" />
-    </Card>
+    <Link href={props.url} target="_blank">
+      <Card className="p-3 hover:bg-accent/80 transition-colors group flex flex-row items-center gap-4">
+        <div className="relative">
+          <img src={props.img} alt={props.name} className="w-10 h-10 rounded-full object-contain" />
+          <img src={props.mdImg} alt={props.name} className="w-4 h-4 absolute -bottom-1 -right-1 rounded-full object-contain" />
+        </div>
+        <div className="mr-auto">
+          <p className="text-lg font-semibold">{props.name}</p>
+          <p title={props.description} className="text-xs text-muted-foreground truncate">
+            {props.description}
+          </p>
+        </div>
+        <ArrowUpRight size={16} className="group-hover:translate-x-2 mr-4 group-hover:-translate-y-2 transition-transform" />
+      </Card>
+    </Link>
   );
 };
