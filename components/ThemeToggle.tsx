@@ -1,27 +1,20 @@
 "use client";
 
+import { useTheme } from "@/hooks/useTheme";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 import { Button, buttonVariants } from "./ui/button";
 
 type ThemeToggleProps = {
   className?: string;
 };
 
-export default function ThemeToggle({ className = "size-8" }: ThemeToggleProps) {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDark]);
+export const ThemeToggle = ({ className = "size-8 text-accent-foreground" }: ThemeToggleProps) => {
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <Button className={cn(buttonVariants({ variant: "outline" }), className)} onClick={() => setIsDark(!isDark)}>
-      {isDark ? "🔆" : "🌙"}
+    <Button onClick={toggleTheme} className={cn(buttonVariants({ variant: "outline" }), className)} aria-label="Toggle theme">
+      {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </Button>
   );
-}
+};

@@ -78,7 +78,7 @@ const SideProject = (props: SideProjectProps) => {
         <props.Logo size={16} className="group-hover:animate-spin-once pointer-events-none" />
       </span>
       <div>
-        <p className="text-lg font-semibold">{props.title}</p>
+        <p className="text-lg text-foreground font-semibold">{props.title}</p>
         <p className="text-sm text-muted-foreground">{props.description}</p>
       </div>
     </Link>
@@ -108,7 +108,7 @@ const Works = (props: WorksProps) => {
     <Link href={props.url} target="_blank" className="inline-flex items-center gap-4 hover:bg-accent/80 transition-colors p-2 rounded">
       <img src={props.img} alt={props.title} className="w-10 h-10 border object-contain rounded-md" />
       <div className="mr-auto max-w-36 lg:max-w-48">
-        <p className="text-lg font-semibold">{props.title}</p>
+        <p className="text-lg text-foreground font-semibold">{props.title}</p>
         <p title={props.role} className="text-xs text-muted-foreground truncate">
           {props.role}
         </p>

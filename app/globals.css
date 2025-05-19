@@ -117,4 +117,18 @@
   body {
     @apply bg-background text-foreground;
   }
+  html,
+  body,
+  main,
+  header,
+  footer,
+  section,
+  article,
+  div,
+  p,
+  span,
+  a,
+  button {
+    @apply transition-colors duration-500;
+  }
 }
