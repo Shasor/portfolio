@@ -1,6 +1,6 @@
 import { Icons } from "./Icons";
 import { Section } from "./Section";
-import ThemeToggle from "./ThemeToggle";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const Header = () => {
   return (
