@@ -8,7 +8,7 @@ export const Status = () => {
   return (
     <Section className="flex max-md:flex-col gap-8 items-center">
       <div className="flex-[3] w-full">
-        <Card className=" flex flex-col p-4 gap-2 w-full">
+        <Card className="flex flex-col p-4 gap-2 w-full">
           <p className="text-lg text-muted-foreground">Training, fun projects</p>
           <div className="flex flex-col gap-4">
             {SIDE_PROJECTS.map((project, index) => (
@@ -39,27 +39,27 @@ export const Status = () => {
 
 const SIDE_PROJECTS: SideProjectProps[] = [
   {
-    Logo: Network, // to change
+    Logo: Network,
     title: "Real-Time-Forum",
-    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    description: "Forum en temps réel avec posts, chat privé et login sécurisé.",
     url: "https://github.com/Shasor/real-time-forum",
   },
   {
     Logo: Gamepad2,
     title: "Make-Your-Game",
-    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    description: "Jeu solo fluide à 60 FPS sans canvas, en pur JS et HTML.",
     url: "https://github.com/Shasor/make-your-game",
   },
   {
-    Logo: Waypoints, // to change
+    Logo: Waypoints,
     title: "Lem-In",
-    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    description: "Simulation d'une colonie de fourmis avec pathfinding en Go.",
     url: "https://github.com/Shasor/lem-in",
   },
   {
     Logo: MessageCircleMore,
     title: "Net-Cat",
-    description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    description: "Création d'un chat TCP interactif en Go, inspiré de NetCat.",
     url: "https://github.com/Shasor/net-cat",
   },
 ];
@@ -73,7 +73,7 @@ type SideProjectProps = {
 
 const SideProject = (props: SideProjectProps) => {
   return (
-    <Link href={props.url} target="_blank" className="inline-flex items-center group gap-4 hover:bg-accent/80 transition-colors p-2 rounded">
+    <Link href={props.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center group gap-4 hover:bg-accent/80 transition-colors p-2 rounded">
       <span className="bg-accent text-accent-foreground p-3 rounded-sm">
         <props.Logo size={16} className="group-hover:animate-spin-once pointer-events-none" />
       </span>
@@ -105,7 +105,7 @@ type WorksProps = {
 
 const Works = (props: WorksProps) => {
   return (
-    <Link href={props.url} target="_blank" className="inline-flex items-center gap-4 hover:bg-accent/80 transition-colors p-2 rounded">
+    <Link href={props.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 hover:bg-accent/80 transition-colors p-2 rounded">
       <img src={props.img} alt={props.title} className="w-10 h-10 border object-contain rounded-md" />
       <div className="mr-auto max-w-36 lg:max-w-48">
         <p className="text-lg text-foreground font-semibold">{props.title}</p>
@@ -152,15 +152,15 @@ type ContactCardProps = {
 
 const ContactCard = (props: ContactCardProps) => {
   return (
-    <Link href={props.url} target="_blank">
+    <Link href={props.url} target="_blank" rel="noopener noreferrer">
       <Card className="p-3 hover:bg-accent/80 transition-colors group flex flex-row items-center gap-4">
-        <div className="relative">
-          <img src={props.img} alt={props.name} className="w-10 h-10 rounded-full object-contain" />
+        <div className="relative w-10 h-10">
+          <img src={props.img} alt={props.name} className="size-full rounded-full object-contain" />
           <img src={props.mdImg} alt={props.name} className="w-4 h-4 absolute -bottom-1 -right-1 rounded-full object-contain" />
         </div>
-        <div className="mr-auto">
+        <div className="flex-1">
           <p className="text-lg font-semibold">{props.name}</p>
-          <p title={props.description} className="text-xs text-muted-foreground truncate">
+          <p title={props.description} className="text-xs text-muted-foreground">
             {props.description}
           </p>
         </div>
