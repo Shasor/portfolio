@@ -1,11 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { cn } from "@/lib/utils";
-import { ComponentPropsWithoutRef } from "react";
+import { Code } from "./Code";
 import { Section } from "./Section";
-
-const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
-  return <span className={cn("bg-accent/40 hover:bg-accent/80 font-mono transition-colors border border-accent p-1 rounded-sm text-primary", className)} {...props} />;
-};
 
 export const Hero = () => {
   return (
@@ -13,9 +8,16 @@ export const Hero = () => {
       <div className="flex-[2] flex flex-col gap-2">
         <h2 className="font-caption text-4xl">Adam GONÇALVES</h2>
         <h3 className="font-caption text-2xl">Full-Stack developer</h3>
-        <p>
-          {/* Use Code Component */}
-          Passionné par l&apos;informatique et en pleine formation en <Code>développement</Code> d&apos;applications et web, je maîtrise les bases de la programmation et aime relever des défis techniques. Curieux et motivé, j&apos;apprends rapidement et cherche à développer des solutions innovantes. Mon objectif ? Allier créativité et performance pour concevoir des applications efficaces et ergonomiques.
+        <p className="leading-7 [&:not(:first-child)]:mt-6">
+          Passionné par l&apos;informatique et actuellement en formation de concepteur d&apos;applications et logicielles, je possède de solides connaissances en programmation et prends plaisir à relever des défis techniques. J&apos;ai déjà exploré plusieurs langages comme <Code icon="js">JavaScript</Code> pour le front-end,{" "}
+          <Code url="https://go.dev" icon="golang">
+            Golang
+          </Code>{" "}
+          pour des services performants côté serveur, ainsi que{" "}
+          <Code url="https://isocpp.org/" icon="cpp">
+            C++
+          </Code>{" "}
+          pour des applications plus proches du système. Curieux et déterminé, j&apos;apprends rapidement et m&apos;investis pleinement dans chaque projet afin de concevoir des solutions à la fois innovantes, robustes et adaptées aux besoins des utilisateurs. Mon objectif : allier créativité et efficacité pour créer des applications performantes, intuitives et bien pensées.
         </p>
       </div>
       <div className="flex-1 max-md:m-auto ml-auto">
