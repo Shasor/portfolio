@@ -1,4 +1,3 @@
-import ThemeScript from "@/components/ThemeScript";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Saira_Stencil_One } from "next/font/google";
@@ -31,10 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
-      <head>
-        <ThemeScript />
-      </head>
+    <html lang="en" className="h-full">
       <body className={cn(geistSans.variable, sairaStencilOne.variable, geistMono.variable, "antialiased font-sans h-full bg-background text-foreground")}>{children}</body>
     </html>
   );
