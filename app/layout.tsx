@@ -21,7 +21,7 @@ const sairaStencilOne = Saira_Stencil_One({
 
 export const metadata: Metadata = {
   title: "Portfolio - Adam GONCALVES",
-  description: "",
+  description: "Full-Stack developer",
 };
 
 export default function RootLayout({
